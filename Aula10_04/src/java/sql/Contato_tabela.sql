@@ -7,4 +7,4 @@ sobrenome VARCHAR(90) NOT NULL,
 telefone VARCHAR(20) NOT NULL
 );
 
-INSER INTO contato (nome, sobrenome, telefone) VALUES ('Fulano', 'da Silva', '555-5555');
+INSERT INTO contato (nome, sobrenome, telefone) VALUES ('Fulano', 'da Silva', '555-5555');
