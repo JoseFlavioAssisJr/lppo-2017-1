@@ -20,7 +20,7 @@ public class ContatoDAO {
 	try {
 	    List<Contato> contatos = new ArrayList<>();
 	    Class.forName("org.apache.derby.jdbc.ClientDriver");
-	    Connection conexao = DriverManager.getConnection("jdbc.derby://localhost:1527/lppo-207-1", "usuario", "senha");
+	    Connection conexao = DriverManager.getConnection("jdbc:derby://localhost:1527/lppo-2017-1", "usuario", "senha");
 	    Statement operacao = conexao.createStatement();
 	    ResultSet resultado = operacao.executeQuery("SELECT * FROM contato");
 	    while(resultado.next()){
