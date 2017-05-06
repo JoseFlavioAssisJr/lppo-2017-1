@@ -33,6 +33,9 @@ public class DetalhesServlet extends HttpServlet {
             Long id = Long.parseLong(request.getParameter("id"));
             ContatoDAO dao = new ContatoDAO();
             Contato contato = dao.getById(id);
+            dao.atualiza(contato);
+            response.sendRedirect("contatos.html");
+            
             request.setAttribute("contato", contato);
             request.getRequestDispatcher("WEB-INF/detalhes-contato.jsp").forward(request, response);
         } catch (NumberFormatException e) {
