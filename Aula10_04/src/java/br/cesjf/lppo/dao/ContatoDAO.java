@@ -58,6 +58,27 @@ public class ContatoDAO {
         throw new Exception("Erro ao inserir o contato",ex);
         }
         
+        public Contato getById(Long id)throws Exception {
+            try {
+                Contato contato = null;
+                opBuscaPorId.clearParameter();
+                opBuscaPorId.setLong(i,id);
+                opBuscaPorId.setLong(1,id);
+                ResultSet resultado = opBuscarPorId.executeQuery();
+                
+                if(resultado.next()){
+                contato = new Contato();
+                contato.setId(resultado.getLong("id"));
+                contato.setNome(resultado.getString("nome"));
+                contato.setSobrenome(resultado.getString("sobrenome"));
+                contato.setTelefone(resultado.getString("telefone"));
+                }
+                
+            } catch (Exception e) {
+            }
+        
+        }
+        
     }
     
 }
