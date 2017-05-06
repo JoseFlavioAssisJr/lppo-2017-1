@@ -5,12 +5,13 @@ import br.cesjf.lppo.dao.ContatoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.jboss.logging.Logger;
+import sun.util.logging.PlatformLogger;
 
 /**
  *
@@ -42,7 +43,7 @@ public class DetalhesServlet extends HttpServlet {
             response.sendRedirect("contatos.html");
         }
             catch (Exception ex){
-            Logger.getLogger(DetalhesServlet.class.getName()).log(Level.SEVERE,null,ex);
+            Logger.getLogger(DetalhesServlet.class.getName()).log(Level.SEVERE, null, ex);
             response.sendRedirect("contatos.html");
             }
         
